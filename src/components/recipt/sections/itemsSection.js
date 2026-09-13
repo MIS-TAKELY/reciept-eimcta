@@ -71,7 +71,7 @@ export function createItemsSection(data) {
                 left: border,
                 right: border,
               },
-              children: [],
+              children: [new Paragraph({})],
             }),
           ],
         }),

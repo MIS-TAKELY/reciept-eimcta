@@ -55,6 +55,7 @@ export function createCustomerSection(data) {
                 left: noBorder,
                 right: noBorder,
               },
+              // Word requires every cell to end with a paragraph after nested tables.
               children: [
                 new Table({
                   width: { size: 100, type: WidthType.PERCENTAGE },
@@ -64,6 +65,7 @@ export function createCustomerSection(data) {
                     customerInfoRow(row.label, row.value),
                   ),
                 }),
+                new Paragraph({}),
               ],
             }),
 
@@ -83,6 +85,7 @@ export function createCustomerSection(data) {
                   borders: TableBorders.NONE,
                   rows: data.verifications.map((item) => verificationRow(item)),
                 }),
+                new Paragraph({}),
               ],
             }),
           ],

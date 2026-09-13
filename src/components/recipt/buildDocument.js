@@ -16,12 +16,7 @@ export function buildReceiptDocument({
     styles: {
       default: {
         document: {
-          styles: [
-            {
-              id: "Normal",
-              run: { font: "Calibri", size: 18 },
-            },
-          ],
+          run: { font: "Calibri", size: 18 },
         },
       },
     },

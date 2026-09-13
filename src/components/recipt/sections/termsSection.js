@@ -79,6 +79,7 @@ export function createTermsTotalsSection(data) {
             new TableCell({
               width: { size: 3800, type: WidthType.DXA },
               borders: blackBorder,
+              // Word requires a trailing paragraph after nested tables in a cell.
               children: [
                 ...data.totals.map((row) => totalRow(row.label, row.value)),
                 new Table({
@@ -134,6 +135,7 @@ export function createTermsTotalsSection(data) {
                     }),
                   ],
                 }),
+                new Paragraph({}),
               ],
             }),
           ],

@@ -207,6 +207,8 @@ export function createTopSection(logoData, data) {
                     }),
                   ),
                 }),
+                // Word requires a trailing paragraph after nested tables in a cell.
+                new Paragraph({}),
               ],
             }),
           ],
