@@ -94,7 +94,7 @@ export function createTopSection(logoData, data) {
     new Paragraph({ spacing: { before: 200 } }),
     new Table({
       width: { size: 100, type: WidthType.PERCENTAGE },
-      columnWidths: [7000, 3000],
+      columnWidths: [5800, 4200],
       rows: [
         new TableRow({
           borders: {
@@ -106,7 +106,7 @@ export function createTopSection(logoData, data) {
           children: [
             // LEFT — company address
             new TableCell({
-              width: { size: 5500, type: WidthType.DXA },
+              width: { size: 5800, type: WidthType.DXA },
               borders: {
                 top: noBorder,
                 bottom: noBorder,
@@ -124,7 +124,7 @@ export function createTopSection(logoData, data) {
 
             // RIGHT — QUOTE box
             new TableCell({
-              width: { size: 1000, type: WidthType.DXA },
+              width: { size: 4200, type: WidthType.DXA },
               borders: {
                 top: noBorder,
                 bottom: noBorder,
@@ -145,9 +145,9 @@ export function createTopSection(logoData, data) {
                   ],
                 }),
                 new Table({
-                  width: { size: 100, type: WidthType.PERCENTAGE },
+                  width: { size: 4200, type: WidthType.DXA },
                   alignment: AlignmentType.RIGHT,
-                  columnWidths: [500, 500],
+                  columnWidths: [2200, 2000],
                   rows: quoteRows.map((row, index) =>
                     new TableRow({
                       borders: {
@@ -165,7 +165,7 @@ export function createTopSection(logoData, data) {
                       },
                       children: [
                         new TableCell({
-                          width: { size: 2000, type: WidthType.DXA },
+                          width: { size: 2200, type: WidthType.DXA },
                           borders: {
                             top: noBorder,
                             bottom: noBorder,
@@ -185,7 +185,7 @@ export function createTopSection(logoData, data) {
                           ],
                         }),
                         new TableCell({
-                          width: { size: 2500, type: WidthType.DXA },
+                          width: { size: 2000, type: WidthType.DXA },
                           borders: {
                             top: noBorder,
                             bottom: noBorder,
