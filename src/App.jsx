@@ -1,10 +1,12 @@
 import "./App.css";
 import Recipt from "./components/recipt";
+import { quoteTemplate } from "./content/quoteData";
 
 function App() {
   return (
     <div>
-      <Recipt />
+      {/* Quote content is injected as a prop — swap in any data object. */}
+      <Recipt data={quoteTemplate} />
       {/* <Receipt/> */}
     </div>
   );
