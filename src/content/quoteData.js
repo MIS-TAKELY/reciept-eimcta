@@ -5,9 +5,38 @@ export const PLACEHOLDER = "________";
 
 export const FILE_NAMES = {
   docx: "EIMCTA-Quotation.docx",
+  pdf: "EIMCTA-Quotation.pdf",
 };
 
+export function formatCurrentDate(dateInput) {
+  if (dateInput && String(dateInput).trim() !== "") {
+    return dateInput;
+  }
+  const d = new Date();
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  return `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+}
+
 export const quoteTemplate = {
+  topBar: {
+    coRegNo: "280667/078/079",
+    vatNo: "610183126",
+    date: "",
+  },
+
   company: {
     nameLines: [
       "Everest International Management",
@@ -16,7 +45,7 @@ export const quoteTemplate = {
     addressLines: [
       "J.P Complex 3rd Floor, Jorpati , Kathmandu , Nepal",
       "www.everestconstrain.com/ info@everestconstrain.com",
-      "\u260E +977 1 5903211 , +977 9860 896 494",
+      "+977 1 5903211 , +977 9860 896 494",
       "Prepared by: Subekshya Parajuli",
       "Govt. Reg No : 280667-078/079",
     ],
@@ -77,6 +106,10 @@ export const quoteTemplate = {
 
   remarks: {
     heading: "Remarks (if any) :",
+    accreditation: "Nepal Red Cross Society",
+    cb: "",
+    legend: "CB - Certificaiton Body",
+    ls: "Lump Sum",
     lines: [
       "Accreditation Selected(if any) :Nepal Red Cross Society",
       "CB Selected(if any) :",
@@ -87,23 +120,37 @@ export const quoteTemplate = {
 
   terms: {
     heading: "TERMS AND CONDITIONS",
+    leftLines: [
+      "1. Client will be billed after indicating acceptance of this quote.",
+      "2. Payment Terms: 50% on signing of contract.",
+      "3. 25% prior mobilization for training to site.",
+      "4. 25% prior issuance of certification.",
+    ],
+    rightLines: [
+      "5. Please fax or mail the signed price quote to the address above.",
+      "6. Transportation cost included from/to Tumlingtar.",
+      "7. Lodging & fooding provided by EIMCTA.",
+    ],
+    note: "Note: Kindly refer to attached Details, Terms and Conditions of Training.",
     lines: [
       "1. Client will be billed after indicating acceptance of this quote.",
-      "2. Payment Terms : 50% on signing of contract,",
-      "3. 25 % Prior Mobilization For Training To Site",
-      "4. 25 % Prior Issuance Of Certification",
+      "2. Payment Terms: 50% on signing of contract.",
+      "3. 25% prior mobilization for training to site.",
+      "4. 25% prior issuance of certification.",
       "5. Please fax or mail the signed price quote to the address above.",
-      "6. Transportation Cost Included From / To Tumlingtar .",
-      "   (Local transportation will be provided by Client )",
-      "7. Lodging & Fooding provided by EIMCTA",
+      "6. Transportation cost included from/to Tumlingtar.",
+      "7. Lodging & fooding provided by EIMCTA.",
+      "7. Lodging & fooding provided by EIMCTA.",
+      "7. Lodging & fooding provided by EIMCTA.",
+      "7. Lodging & fooding provided by EIMCTA.",
       "Note :  Kindly Refer to attached Details, Terms and Conditions of Training.",
     ],
   },
 
   acceptance: {
     heading: "Customer Acceptance (sign below & initiate with company Seal ):",
-    signature: "Signature/ Date : 2024/01/16",
-    signatory: "Authorised Signatory's Name : ___________________________",
+    signatureDate: "2024/01/16",
+    signatoryName: "",
     seal: "Customer's Company Seal",
   },
 
@@ -117,7 +164,7 @@ export const quoteTemplate = {
   footer: {
     contact: "If you have any questions about this price quote, please contact",
     contactName: "Shailendra Kumar Kharel , 9860896494",
-    thanks: "\u00A9 We are Thankful to be in Your Service \u00A9",
-    sealText: "Sign, Date and Seal of EIMCTA",
+    thanks: "We are Thankful to be in Your Service ",
+    sealText: "Sign/Date and Seal of EIMCTA",
   },
 };

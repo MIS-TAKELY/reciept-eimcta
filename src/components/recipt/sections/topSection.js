@@ -10,14 +10,20 @@ import {
   VerticalAlign,
   WidthType,
 } from "docx";
-import { NAVY, PLACEHOLDER } from "../../../content/quoteData.js";
+import {
+  NAVY,
+  PLACEHOLDER,
+  formatCurrentDate,
+} from "../../../content/quoteData.js";
 import { noBorder } from "../helpers.js";
 
-/**
- * SECTION 1: LOGO + COMPANY NAME (left logo, right company name lines)
- * SECTION 2: ADDRESS (left) + QUOTE box (right)
- */
+
 export function createTopSection(logoData, data) {
+  const topDate = formatCurrentDate(data?.topBar?.date || data?.quote?.topDate);
+  const coRegNo =
+    data?.topBar?.coRegNo || data?.company?.coRegNo || "280667/078/079";
+  const vatNo = data?.topBar?.vatNo || data?.company?.vatNo || "610183126";
+
   const quoteRows = [
     { label: "DATE", value: data.quote.date },
     { label: "QUOTE #", value: data.quote.number },
@@ -27,6 +33,57 @@ export function createTopSection(logoData, data) {
   ];
 
   return [
+    // TOP BAR: Co. Reg. No / VAT No (left) + Date (right)
+    new Table({
+      width: { size: 100, type: WidthType.PERCENTAGE },
+      columnWidths: [6500, 3500],
+      rows: [
+        new TableRow({
+          borders: {
+            top: noBorder,
+            bottom: noBorder,
+            left: noBorder,
+            right: noBorder,
+          },
+          children: [
+            new TableCell({
+              width: { size: 6500, type: WidthType.DXA },
+              borders: { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder },
+              children: [
+                new Paragraph({
+                  spacing: { before: 0, after: 60 },
+                  children: [
+                    new TextRun({
+                      text: `Co. Reg. No: ${coRegNo} | VAT No: ${vatNo}`,
+                      size: 15,
+                      color: "333333",
+                    }),
+                  ],
+                }),
+              ],
+            }),
+            new TableCell({
+              width: { size: 3500, type: WidthType.DXA },
+              borders: { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder },
+              children: [
+                new Paragraph({
+                  alignment: AlignmentType.RIGHT,
+                  spacing: { before: 0, after: 60 },
+                  children: [
+                    new TextRun({
+                      text: `Date: ${topDate}`,
+                      size: 15,
+                      color: "333333",
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          ],
+        }),
+      ],
+    }),
+
     // SECTION 1: LOGO + COMPANY NAME
     new Table({
       width: { size: 100, type: WidthType.PERCENTAGE },
@@ -207,7 +264,6 @@ export function createTopSection(logoData, data) {
                     }),
                   ),
                 }),
-                // Word requires a trailing paragraph after nested tables in a cell.
                 new Paragraph({}),
               ],
             }),

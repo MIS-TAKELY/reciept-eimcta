@@ -33,7 +33,7 @@ export function buildReceiptDocument({
           ...createCustomerSection(data),
           ...createItemsSection(data),
           ...createTermsTotalsSection(data),
-          ...createFooterSection(logoData, data),
+          ...createFooterSection(data),
         ],
       },
     ],

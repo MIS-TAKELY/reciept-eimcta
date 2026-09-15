@@ -9,9 +9,7 @@ import {
 } from "docx";
 import { headerCell, itemRow } from "../helpers.js";
 
-/**
- * MAIN ITEMS TABLE + REMARKS row
- */
+
 export function createItemsSection(data) {
   const columnWidths = [5500, 1500, 1500, 1500];
   const border = { style: BorderStyle.SINGLE, size: 4, color: "999999" };

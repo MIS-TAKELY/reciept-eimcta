@@ -20,7 +20,7 @@ export default function Receipt({ data = quoteTemplate }) {
 
   return (
     <div>
-      <button onClick={generateReceipt}>Generate Quotation</button>
+      <button onClick={generateReceipt}>Generate Quotation in docx</button>
     </div>
   );
 }

@@ -11,9 +11,7 @@ import {
 import { NAVY } from "../../../content/quoteData.js";
 import { customerInfoRow, noBorder, verificationRow } from "../helpers.js";
 
-/**
- * SECTION 3: CUSTOMER INFO + VERIFICATION CHECKS
- */
+
 export function createCustomerSection(data) {
   return [
     new Table({

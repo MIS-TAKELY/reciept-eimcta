@@ -1,13 +1,14 @@
 import "./App.css";
+import Receipt from "./components/pdf";
 import Recipt from "./components/recipt";
 import { quoteTemplate } from "./content/quoteData";
 
 function App() {
   return (
     <div>
-      {/* Quote content is injected as a prop — swap in any data object. */}
       <Recipt data={quoteTemplate} />
-      {/* <Receipt/> */}
+
+      <Receipt data={quoteTemplate} />
     </div>
   );
 }
