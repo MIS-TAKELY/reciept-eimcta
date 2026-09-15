@@ -102,6 +102,24 @@ export const quoteTemplate = {
       taxed: "",
       amount: "75,000.00",
     },
+    {
+      description: "Basic First Aid Awarness Training 6 hrs- ( Day 3 )",
+      unit: "Lump Sum",
+      taxed: "",
+      amount: "75,000.00",
+    },
+    {
+      description: "Basic First Aid Awarness Training 6 hrs- ( Day 3 )",
+      unit: "Lump Sum",
+      taxed: "",
+      amount: "75,000.00",
+    },
+    {
+      description: "Basic First Aid Awarness Training 6 hrs- ( Day 3 )",
+      unit: "Lump Sum",
+      taxed: "",
+      amount: "75,000.00",
+    },
   ],
 
   remarks: {
@@ -130,6 +148,7 @@ export const quoteTemplate = {
       "5. Please fax or mail the signed price quote to the address above.",
       "6. Transportation cost included from/to Tumlingtar.",
       "7. Lodging & fooding provided by EIMCTA.",
+      "7. Lodging & fooding provided by EIMCTA.",
     ],
     note: "Note: Kindly refer to attached Details, Terms and Conditions of Training.",
     lines: [
@@ -139,9 +158,6 @@ export const quoteTemplate = {
       "4. 25% prior issuance of certification.",
       "5. Please fax or mail the signed price quote to the address above.",
       "6. Transportation cost included from/to Tumlingtar.",
-      "7. Lodging & fooding provided by EIMCTA.",
-      "7. Lodging & fooding provided by EIMCTA.",
-      "7. Lodging & fooding provided by EIMCTA.",
       "7. Lodging & fooding provided by EIMCTA.",
       "Note :  Kindly Refer to attached Details, Terms and Conditions of Training.",
     ],
